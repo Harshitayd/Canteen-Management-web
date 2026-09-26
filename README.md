@@ -1,93 +1,43 @@
-# CampusBite - College Canteen Management System
+# 🍱 CampusBite - College Canteen Management System
 
-CampusBite is a web application designed for college canteens. It allows students to browse food menus, add items to a cart, place orders, and track order status in real time. It also features an Admin Dashboard for managing food items, updating order statuses, viewing registered students, and reviewing sales reports.
+Welcome to **CampusBite**, a modern web application created to simplify food ordering for college students and canteen staff. 
+
+Instead of standing in long queues during short lecture breaks, students can browse the daily canteen menu, order food online, and track their order status live until it is ready for pickup at the counter.
 
 ---
 
-## 🔑 Demo Login Credentials
+## 🌟 Key Highlights
 
-You can test both student and admin roles using the pre-seeded accounts:
+### 👨‍🎓 For Students
+- **Explore Daily Menu**: Browse fresh dishes across Breakfast, Lunch, Snacks, Beverages, and Desserts.
+- **Search & Filters**: Instantly search food items, filter by category, or sort by price and ratings.
+- **Easy Ordering**: Adjust item quantities, view subtotal and tax breakdowns, and place pickup orders with Cash or UPI options.
+- **Live Order Tracking**: Follow live order status through an interactive 5-step timeline (*Order Placed ➔ Confirmed ➔ Preparing ➔ Ready for Pickup ➔ Completed*).
+- **Personal Account**: View receipts of past orders and update student profile contact details.
 
-| Role | Email | Password | Access Level |
+### 👨‍🍳 For Canteen Management & Staff
+- **Interactive Admin Dashboard**: View real-time canteen statistics including total orders, daily revenue, active orders, and popular items.
+- **Food Inventory Control**: Add new dishes, edit pricing, update descriptions, or mark items in-stock / out-of-stock.
+- **Live Order Management**: Change kitchen preparation statuses so students get real-time tracking updates.
+- **Analytics & Student Directory**: Search registered student accounts and inspect sales performance reports.
+
+---
+
+## 💡 How to Explore the Demo
+
+Open `index.html` in any web browser and try out the application using these demo accounts:
+
+| User Account | Email | Password | What You Can Do |
 | :--- | :--- | :--- | :--- |
-| **Student** | `student@campusbite.com` | `student123` | Menu, Cart, Checkout, Order Tracking, Profile |
-| **Admin** | `admin@campusbite.com` | `admin123` | Food CRUD, Live Order Status Updates, User List, Sales Reports |
+| **Student Demo** | `student@campusbite.com` | `student123` | Browse menu, order food, track live status & view history |
+| **Admin Demo** | `admin@campusbite.com` | `admin123` | Manage food inventory, update order statuses & view reports |
+
+*(You can also register a new student account on the Sign Up page).*
 
 ---
 
-## ✨ Features
+## 🛠️ Built With
 
-### For Students
-- **Browse Today's Menu**: Filter by categories (Breakfast, Lunch, Snacks, Beverages, Desserts), search by food name, and sort by price or rating.
-- **Cart & Checkout**: Add/remove items, adjust quantities, calculate taxes (5%), and select pickup and demo payment options.
-- **Order Tracking**: Visual 5-step timeline (`Order Placed` ➔ `Confirmed` ➔ `Preparing` ➔ `Ready` ➔ `Completed`) synced with admin updates.
-- **Order History & Profile**: View receipt details of past orders and update contact info.
-
-### For Administrators (`/admin/`)
-- **Dashboard Overview**: Key metrics (Total Orders, Revenue, Available Dishes) and visual progress charts.
-- **Manage Food**: Add new dishes, edit pricing, delete items, or toggle in-stock/out-of-stock availability.
-- **Manage Orders**: Update order statuses in real time to update student tracking timelines.
-- **Reports & Users**: Search registered student accounts and review sales performance statistics.
-
----
-
-## 🛠️ Technology Stack
-
-- **Frontend**: HTML5, CSS3, Vanilla JavaScript (ES6+)
-- **Data Storage**: Browser `localStorage` API
-- **Design & Icons**: FontAwesome 6, Google Fonts (*Outfit* & *Plus Jakarta Sans*)
-
-> **Note**: Built strictly without external frontend/backend frameworks or database servers as per 1st-year CSE project guidelines.
-
----
-
-## 📁 Folder Structure
-
-```
-canteen-management-web/
-├── index.html              # Landing / Home Page
-├── login.html              # Student & Admin Login Page
-├── register.html           # Student Registration Page
-├── menu.html               # Menu Page (Search, Filter, Sort)
-├── food-details.html       # Standalone Food Details Page
-├── cart.html               # Shopping Cart Page
-├── checkout.html           # Checkout Page
-├── order-confirmation.html # Receipt & Order Confirmation
-├── tracking.html           # Visual Timeline Order Tracking
-├── orders.html             # Student Order History
-├── dashboard.html          # Student Dashboard
-├── profile.html           # Profile Edit Page
-├── about.html              # About & 5-Step Process
-├── contact.html            # Contact & Canteen Timings
-│
-├── admin/                  # Admin Management Portal
-│   ├── dashboard.html      # Overview & Stats
-│   ├── food.html           # Manage Food Items (CRUD)
-│   ├── orders.html         # Manage Order Statuses
-│   ├── users.html          # Registered Students List
-│   └── reports.html        # Sales Reports
-│
-├── css/                    # Stylesheets
-│   ├── style.css           # Global Theme & Components
-│   ├── responsive.css      # Responsive Breakpoints
-│   └── admin.css           # Admin Dashboard Styles
-│
-├── js/                     # Application Scripts
-│   ├── data.js             # Initial 45 Food Items & Seed Data
-│   ├── utils.js            # Toast Notifications & Formatting
-│   ├── auth.js             # Login, Register & Access Protection
-│   ├── cart.js             # Cart Logic & Totals
-│   ├── menu.js             # Dynamic Menu Rendering
-│   ├── orders.js           # Checkout & Tracking Logic
-│   ├── admin.js            # Admin Operations & Charts
-│   └── app.js              # Page Bootstrapper
-│
-└── vercel.json             # Vercel Deployment Configuration
-```
-
----
-
-## 🚀 How to Run Locally
-
-Simply open `index.html` in any web browser. No installation or setup commands required.
-
+- **HTML5** & **CSS3** (Responsive cards, warm canteen visual theme, smooth hover animations)
+- **Vanilla JavaScript** (Dynamic menu rendering, search & filtering, cart management, status updates)
+- **Browser LocalStorage API** (Fast client-side data persistence)

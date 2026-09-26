@@ -91,10 +91,3 @@ canteen-management-web/
 
 Simply open `index.html` in any web browser. No installation or setup commands required.
 
----
-
-## 🌐 How to Deploy to Vercel
-
-1. Import your GitHub repository (`Harshitayd/Canteen-Management-web`) on [vercel.com/new](https://vercel.com/new).
-2. Keep the framework preset as **Other**.
-3. Click **Deploy**.

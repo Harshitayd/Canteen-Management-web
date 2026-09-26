@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CampusBite - College Canteen Management System</title>
+    <meta name="description" content="Order fresh campus meals quickly and hassle-free from your college canteen.">
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+    <!-- NAVBAR HEADER -->
+    <header class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="brand-logo">
+                <i class="fas fa-utensils"></i>
+                <span>Campus<strong class="text-primary">Bite</strong></span>
+            </a>
+
+            <ul class="nav-menu" id="nav-links">
+                <li><a href="index.html" class="nav-link active">Home</a></li>
+                <li><a href="menu.html" class="nav-link">Menu</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+
+            <div class="nav-actions">
+                <a href="cart.html" class="cart-icon-btn" title="Shopping Cart">
+                    <i class="fas fa-shopping-bag"></i>
+                    <span class="cart-count-badge" style="display: none;">0</span>
+                </a>
+                <div id="nav-auth-buttons">
+                    <a href="login.html" class="btn btn-outline mr-2">Login</a>
+                    <a href="register.html" class="btn btn-primary">Register</a>
+                </div>
+                <button class="mobile-menu-toggle" id="mobile-menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="hero-section py-5" style="background: linear-gradient(135deg, #fff0eb 0%, #f8fafc 100%);">
+        <div class="container d-flex align-center justify-between gap-5 py-4 hero-wrapper">
+            <div class="hero-content flex-1">
+                <span class="badge badge-primary mb-3">🔥 Fast & Delicious Campus Dining</span>
+                <h1 style="font-size: 3rem; line-height: 1.2;" class="mb-3">
+                    Your Campus.<br>
+                    Your Canteen.<br>
+                    <span class="text-primary">Your Choice.</span>
+                </h1>
+                <p class="text-muted text-lg mb-4" style="max-width: 520px;">
+                    Order your favorite campus meals quickly, conveniently and hassle-free. Skip long queues and enjoy fresh food prepared on time.
+                </p>
+                <div class="d-flex gap-3 hero-buttons">
+                    <a href="menu.html" class="btn btn-primary btn-lg">
+                        <i class="fas fa-utensils mr-2"></i> Explore Menu
+                    </a>
+                    <a href="menu.html" class="btn btn-outline btn-lg">
+                        <i class="fas fa-bolt mr-2"></i> Order Now
+                    </a>
+                </div>
+            </div>
+
+            <div class="hero-image flex-1 text-center">
+                <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&q=80&w=700" alt="Delicious Campus Food" style="border-radius: var(--border-radius-lg); box-shadow: var(--shadow-lg); max-height: 420px; width: 100%; object-fit: cover;">
+            </div>
+        </div>
+    </section>
+
+    <!-- FEATURES SECTION -->
+    <section class="features-section py-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <span class="badge badge-primary mb-2">Why CampusBite?</span>
+                <h2 class="font-bold text-2xl">Built Specially for College Students</h2>
+            </div>
+
+            <div class="grid grid-cols-4 gap-4">
+                <div class="card p-4 text-center card-hover">
+                    <div class="feature-icon mb-3" style="font-size: 2.2rem; color: var(--primary);">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h4 class="font-bold mb-2">Quick Ordering</h4>
+                    <p class="text-muted text-sm">Order your food in just a few clicks from your laptop or phone.</p>
+                </div>
+
+                <div class="card p-4 text-center card-hover">
+                    <div class="feature-icon mb-3" style="font-size: 2.2rem; color: var(--primary);">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <h4 class="font-bold mb-2">Fresh Food</h4>
+                    <p class="text-muted text-sm">Enjoy freshly prepared meals made from high quality ingredients.</p>
+                </div>
+
+                <div class="card p-4 text-center card-hover">
+                    <div class="feature-icon mb-3" style="font-size: 2.2rem; color: var(--primary);">
+                        <i class="fas fa-wallet"></i>
+                    </div>
+                    <h4 class="font-bold mb-2">Easy Payments</h4>
+                    <p class="text-muted text-sm">Simple and convenient checkout with UPI or Cash at counter.</p>
+                </div>
+
+                <div class="card p-4 text-center card-hover">
+                    <div class="feature-icon mb-3" style="font-size: 2.2rem; color: var(--primary);">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h4 class="font-bold mb-2">Order Tracking</h4>
+                    <p class="text-muted text-sm">Know exactly when your order is ready for quick pickup.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- POPULAR FOOD SECTION -->
+    <section class="popular-food-section py-5 bg-light">
+        <div class="container">
+            <div class="d-flex justify-between align-center mb-4">
+                <div>
+                    <span class="badge badge-primary mb-1">Today's Highlights</span>
+                    <h2 class="font-bold">Popular Food Items</h2>
+                </div>
+                <a href="menu.html" class="btn btn-outline">
+                    View Full Menu <i class="fas fa-arrow-right ml-1"></i>
+                </a>
+            </div>
+
+            <!-- Dynamic Food Grid rendered by js/menu.js -->
+            <div id="popular-food-grid" class="food-grid"></div>
+        </div>
+    </section>
+
+    <!-- ABOUT PREVIEW -->
+    <section class="about-preview-section py-5">
+        <div class="container d-flex align-center gap-5">
+            <div class="flex-1">
+                <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&q=80&w=600" alt="College Canteen" style="border-radius: var(--border-radius-lg); box-shadow: var(--shadow-md);">
+            </div>
+            <div class="flex-1">
+                <span class="badge badge-primary mb-2">About Our Canteen</span>
+                <h2 class="font-bold mb-3">Serving Delicious Memories Every Day</h2>
+                <p class="text-muted mb-3">
+                    CampusBite is the official smart canteen ordering system designed to eliminate long standing lines and optimize kitchen efficiency. We serve hygienic, nutritious, and appetizing meals tailored for students and faculty.
+                </p>
+                <a href="about.html" class="btn btn-primary">Learn More About Us</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS SECTION -->
+    <section class="testimonials-section py-5 bg-light">
+        <div class="container">
+            <div class="text-center mb-5">
+                <span class="badge badge-primary mb-2">Student Reviews</span>
+                <h2 class="font-bold">What Campus Bites Say</h2>
+            </div>
+
+            <div class="grid grid-cols-3 gap-4">
+                <div class="card p-4">
+                    <div class="d-flex align-center gap-3 mb-3">
+                        <i class="fas fa-user-circle text-primary" style="font-size: 2.5rem;"></i>
+                        <div>
+                            <h5 class="font-bold">Aarav Mehta</h5>
+                            <small class="text-muted">CSE 3rd Year</small>
+                        </div>
+                    </div>
+                    <p class="text-muted text-sm">"CampusBite has saved me so much time between back-to-back lectures! I order my Cold Coffee right before my lab ends and it's ready when I arrive."</p>
+                </div>
+
+                <div class="card p-4">
+                    <div class="d-flex align-center gap-3 mb-3">
+                        <i class="fas fa-user-circle text-primary" style="font-size: 2.5rem;"></i>
+                        <div>
+                            <h5 class="font-bold">Priya Sharma</h5>
+                            <small class="text-muted">ECE 2nd Year</small>
+                        </div>
+                    </div>
+                    <p class="text-muted text-sm">"The Masala Dosa and Veg Burgers are amazing! Tracking my order status live on the site is super cool and convenient."</p>
+                </div>
+
+                <div class="card p-4">
+                    <div class="d-flex align-center gap-3 mb-3">
+                        <i class="fas fa-user-circle text-primary" style="font-size: 2.5rem;"></i>
+                        <div>
+                            <h5 class="font-bold">Vikram Patel</h5>
+                            <small class="text-muted">ME 4th Year</small>
+                        </div>
+                    </div>
+                    <p class="text-muted text-sm">"Extremely clean interface and beginner-friendly UI. Ordering samosas and tea during breaks is effortless now."</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT CTA -->
+    <section class="contact-cta py-5" style="background: linear-gradient(135deg, var(--secondary) 0%, #1e1f2f 100%); color: white;">
+        <div class="container text-center py-4">
+            <h2 class="font-bold text-white mb-2">Need help with your order?</h2>
+            <p class="text-muted mb-4" style="color: #94a3b8 !important;">Have questions regarding daily specials or order cancellations? We're here to assist you.</p>
+            <a href="contact.html" class="btn btn-primary btn-lg">Contact Us Now</a>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="grid grid-cols-4 gap-4">
+                <div>
+                    <a href="index.html" class="brand-logo mb-3" style="color: white;">
+                        <i class="fas fa-utensils"></i>
+                        <span style="color: white;">Campus<strong class="text-primary">Bite</strong></span>
+                    </a>
+                    <p class="text-muted text-sm">Smart college canteen management system crafted for seamless food ordering.</p>
+                </div>
+                <div>
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="menu.html">Today's Menu</a></li>
+                        <li><a href="about.html">About Canteen</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Opening Hours</h4>
+                    <p class="text-muted text-sm mb-1">Monday - Saturday:</p>
+                    <strong style="color: white;">8:00 AM - 6:00 PM</strong>
+                    <p class="text-muted text-sm mt-2">Sunday: Closed</p>
+                </div>
+                <div>
+                    <h4>Campus Location</h4>
+                    <p class="text-muted text-sm mb-2">Central Student Activity Center, Ground Floor, Engineering Block.</p>
+                    <div class="social-icons mt-3">
+                        <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 CampusBite Canteen Management System. Designed as a 1st-Year CSE College Project.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript Files -->
+    <script src="js/data.js"></script>
+    <script src="js/utils.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/cart.js"></script>
+    <script src="js/menu.js"></script>
+    <script src="js/orders.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>

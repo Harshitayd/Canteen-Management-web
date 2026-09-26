@@ -1,0 +1,206 @@
+/* 
+ * CampusBite - Admin Dashboard Stylesheet
+ * Sidebar layout, metrics cards, custom SVG/CSS charts, tables
+ */
+
+.admin-wrapper {
+    display: flex;
+    min-height: 100vh;
+    background-color: var(--bg-main);
+}
+
+.admin-sidebar {
+    width: 260px;
+    background-color: var(--secondary);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 100;
+}
+
+.admin-brand {
+    padding: 1.5rem;
+    font-size: 1.4rem;
+    font-weight: 800;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.admin-brand i {
+    color: var(--primary);
+}
+
+.admin-nav {
+    list-style: none;
+    padding: 1rem 0;
+    flex: 1;
+}
+
+.admin-nav-item {
+    margin-bottom: 4px;
+}
+
+.admin-nav-link {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 24px;
+    color: #94a3b8;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: var(--transition-fast);
+}
+
+.admin-nav-link:hover, .admin-nav-link.active {
+    color: white;
+    background: rgba(255, 107, 53, 0.15);
+    border-left: 4px solid var(--primary);
+}
+
+.admin-nav-link i {
+    font-size: 1.1rem;
+    width: 22px;
+}
+
+.admin-main {
+    flex: 1;
+    margin-left: 260px;
+    padding: 2rem 2.5rem;
+}
+
+.admin-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+/* Stat Cards */
+.stat-card {
+    background: white;
+    border-radius: var(--border-radius);
+    padding: 1.4rem;
+    border: 1px solid var(--border-color);
+    box-shadow: var(--shadow-sm);
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+}
+
+.stat-icon {
+    width: 54px;
+    height: 54px;
+    border-radius: var(--border-radius-sm);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+}
+
+.bg-primary-light { background-color: var(--primary-light); }
+.bg-success-light { background-color: #dcfce7; }
+.bg-warning-light { background-color: #fef9c3; }
+.bg-info-light { background-color: #e0f2fe; }
+
+.stat-label {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    font-weight: 600;
+    display: block;
+}
+
+.stat-value {
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: var(--secondary);
+    margin-top: 2px;
+}
+
+/* Custom CSS Progress Bar Chart */
+.custom-bar-chart {
+    padding-top: 1rem;
+}
+
+.progress-bar-bg {
+    height: 10px;
+    background: var(--bg-subtle);
+    border-radius: var(--border-radius-pill);
+    overflow: hidden;
+}
+
+.progress-bar-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--primary), var(--accent));
+    border-radius: var(--border-radius-pill);
+    transition: width 0.6s ease;
+}
+
+/* Status Grid Boxes */
+.status-summary-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.status-box {
+    padding: 1.2rem;
+    border-radius: var(--border-radius-sm);
+    text-align: center;
+}
+
+.status-count {
+    display: block;
+    font-size: 1.8rem;
+    font-weight: 800;
+}
+
+.status-name {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--secondary);
+}
+
+/* Table Design */
+.table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.table th, .table td {
+    padding: 12px 16px;
+    text-align: left;
+    border-bottom: 1px solid var(--border-color);
+    font-size: 0.9rem;
+}
+
+.table th {
+    background-color: var(--bg-subtle);
+    color: var(--secondary);
+    font-weight: 700;
+}
+
+.table tbody tr:hover {
+    background-color: #f8fafc;
+}
+
+.table-thumb-img {
+    width: 48px;
+    height: 48px;
+    object-fit: cover;
+    border-radius: var(--border-radius-sm);
+}
+
+.status-select {
+    padding: 4px 8px;
+    font-size: 0.85rem;
+    border-radius: var(--border-radius-sm);
+}

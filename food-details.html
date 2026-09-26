@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Item Details - CampusBite</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+    <!-- NAVBAR HEADER -->
+    <header class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="brand-logo">
+                <i class="fas fa-utensils"></i>
+                <span>Campus<strong class="text-primary">Bite</strong></span>
+            </a>
+
+            <ul class="nav-menu" id="nav-links">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="menu.html" class="nav-link active">Menu</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+
+            <div class="nav-actions">
+                <a href="cart.html" class="cart-icon-btn" title="Shopping Cart">
+                    <i class="fas fa-shopping-bag"></i>
+                    <span class="cart-count-badge" style="display: none;">0</span>
+                </a>
+                <div id="nav-auth-buttons"></div>
+                <button class="mobile-menu-toggle" id="mobile-menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- MAIN ITEM DETAILS -->
+    <main class="main-content">
+        <div class="container">
+            <a href="menu.html" class="btn btn-outline mb-4">
+                <i class="fas fa-arrow-left mr-2"></i> Back to Menu
+            </a>
+
+            <div id="food-detail-container" class="card p-4"></div>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2026 CampusBite Canteen Management System.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript Files -->
+    <script src="js/data.js"></script>
+    <script src="js/utils.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/cart.js"></script>
+    <script src="js/menu.js"></script>
+    <script src="js/orders.js"></script>
+    <script src="js/app.js"></script>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const urlParams = new URLSearchParams(window.location.search);
+            const foodId = urlParams.get('id') || 'food_1';
+            const foodItems = getStorage('foodItems', []);
+            const food = foodItems.find(f => f.id === foodId) || foodItems[0];
+            const container = document.getElementById('food-detail-container');
+
+            if (food && container) {
+                container.innerHTML = `
+                    <div class="modal-grid">
+                        <div class="modal-img-container">
+                            <img src="${food.image}" alt="${food.name}" class="modal-food-img" style="border-radius: var(--border-radius-sm);" onerror="this.src='https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=600'">
+                        </div>
+                        <div class="modal-info-container">
+                            <span class="badge badge-primary mb-2">${food.category}</span>
+                            <h1 class="modal-food-title mb-2">${food.name}</h1>
+                            <div class="mb-3">${renderStars(food.rating)}</div>
+                            <div class="modal-price mb-4">${formatCurrency(food.price)}</div>
+
+                            <h5 class="font-bold mb-1">Description:</h5>
+                            <p class="text-muted mb-3">${food.description}</p>
+
+                            <h5 class="font-bold mb-1">Key Ingredients:</h5>
+                            <p class="text-muted mb-3">${food.ingredients || 'Fresh campus kitchen ingredients'}</p>
+
+                            <div class="mb-4">
+                                <span class="font-bold">Status: </span>
+                                ${food.isAvailable ? '<span class="text-success font-semibold"><i class="fas fa-check-circle"></i> In Stock</span>' : '<span class="text-danger font-semibold"><i class="fas fa-times-circle"></i> Out of Stock</span>'}
+                            </div>
+
+                            ${food.isAvailable ? `
+                                <div class="d-flex align-center gap-3 mb-4">
+                                    <span class="font-bold">Quantity:</span>
+                                    <div class="cart-qty-controls">
+                                        <button class="qty-btn" onclick="changeDetailQty(-1)">-</button>
+                                        <span class="qty-num" id="detail-qty-val">1</span>
+                                        <button class="qty-btn" onclick="changeDetailQty(1)">+</button>
+                                    </div>
+                                </div>
+                                <button class="btn btn-primary btn-block btn-lg" onclick="addDetailToCart('${food.id}')">
+                                    <i class="fas fa-cart-plus mr-2"></i> Add to Cart
+                                </button>
+                            ` : `
+                                <button class="btn btn-secondary btn-block btn-lg" disabled>Out of Stock</button>
+                            `}
+                        </div>
+                    </div>
+                `;
+            }
+        });
+
+        function changeDetailQty(delta) {
+            const el = document.getElementById('detail-qty-val');
+            if (el) {
+                let current = parseInt(el.textContent) + delta;
+                if (current < 1) current = 1;
+                el.textContent = current;
+            }
+        }
+
+        function addDetailToCart(foodId) {
+            const el = document.getElementById('detail-qty-val');
+            const qty = el ? parseInt(el.textContent) : 1;
+            addToCart(foodId, qty);
+        }
+    </script>
+</body>
+</html>

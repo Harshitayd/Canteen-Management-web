@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Dashboard - CampusBite</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+    <!-- NAVBAR HEADER -->
+    <header class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="brand-logo">
+                <i class="fas fa-utensils"></i>
+                <span>Campus<strong class="text-primary">Bite</strong></span>
+            </a>
+            <ul class="nav-menu" id="nav-links">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="menu.html" class="nav-link">Menu</a></li>
+                <li><a href="dashboard.html" class="nav-link active">Dashboard</a></li>
+                <li><a href="orders.html" class="nav-link">My Orders</a></li>
+            </ul>
+            <div class="nav-actions">
+                <a href="cart.html" class="cart-icon-btn" title="Shopping Cart">
+                    <i class="fas fa-shopping-bag"></i>
+                    <span class="cart-count-badge" style="display: none;">0</span>
+                </a>
+                <div id="nav-auth-buttons"></div>
+                <button class="mobile-menu-toggle" id="mobile-menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- MAIN STUDENT DASHBOARD -->
+    <main class="main-content py-4">
+        <div class="container">
+            <!-- Welcome Header -->
+            <div class="d-flex justify-between align-center mb-4 pb-3 border-bottom">
+                <div>
+                    <span class="badge badge-primary mb-1">Student Portal</span>
+                    <h1 class="font-bold">Welcome back, <span id="student-welcome-name" class="text-primary">Student</span>!</h1>
+                    <p class="text-muted">Manage your food orders and track active meal pick-ups.</p>
+                </div>
+                <div>
+                    <a href="menu.html" class="btn btn-primary">
+                        <i class="fas fa-plus mr-2"></i> Order Food
+                    </a>
+                </div>
+            </div>
+
+            <!-- Stats Metric Cards -->
+            <div class="grid grid-cols-4 gap-4 mb-5">
+                <div class="card p-4 d-flex align-center gap-3">
+                    <div class="stat-icon-bg bg-primary-light p-3 rounded text-primary" style="font-size: 1.8rem;">
+                        <i class="fas fa-receipt"></i>
+                    </div>
+                    <div>
+                        <small class="text-muted font-semibold d-block">Total Orders</small>
+                        <h2 class="font-bold" id="dash-total-orders">0</h2>
+                    </div>
+                </div>
+
+                <div class="card p-4 d-flex align-center gap-3">
+                    <div class="stat-icon-bg bg-warning-light p-3 rounded text-warning" style="font-size: 1.8rem;">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <div>
+                        <small class="text-muted font-semibold d-block">Pending Orders</small>
+                        <h2 class="font-bold" id="dash-pending-orders">0</h2>
+                    </div>
+                </div>
+
+                <div class="card p-4 d-flex align-center gap-3">
+                    <div class="stat-icon-bg bg-success-light p-3 rounded text-success" style="font-size: 1.8rem;">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <div>
+                        <small class="text-muted font-semibold d-block">Completed Orders</small>
+                        <h2 class="font-bold" id="dash-completed-orders">0</h2>
+                    </div>
+                </div>
+
+                <div class="card p-4 d-flex align-center gap-3">
+                    <div class="stat-icon-bg bg-info-light p-3 rounded text-info" style="font-size: 1.8rem;">
+                        <i class="fas fa-shopping-basket"></i>
+                    </div>
+                    <div>
+                        <small class="text-muted font-semibold d-block">Cart Items</small>
+                        <h2 class="font-bold cart-count-badge" style="position: static; border: none; background: none; color: inherit; font-size: 1.8rem; height: auto;">0</h2>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quick Actions -->
+            <h3 class="font-bold mb-3">Quick Actions</h3>
+            <div class="grid grid-cols-4 gap-4 mb-5">
+                <a href="menu.html" class="card p-4 text-center card-hover">
+                    <i class="fas fa-utensils text-primary mb-2" style="font-size: 2rem;"></i>
+                    <h5 class="font-bold mb-1">Browse Menu</h5>
+                    <small class="text-muted">Explore fresh food items</small>
+                </a>
+
+                <a href="cart.html" class="card p-4 text-center card-hover">
+                    <i class="fas fa-shopping-cart text-primary mb-2" style="font-size: 2rem;"></i>
+                    <h5 class="font-bold mb-1">View Cart</h5>
+                    <small class="text-muted">Review & checkout items</small>
+                </a>
+
+                <a href="tracking.html" class="card p-4 text-center card-hover">
+                    <i class="fas fa-map-marker-alt text-primary mb-2" style="font-size: 2rem;"></i>
+                    <h5 class="font-bold mb-1">Track Order</h5>
+                    <small class="text-muted">Check live status timeline</small>
+                </a>
+
+                <a href="orders.html" class="card p-4 text-center card-hover">
+                    <i class="fas fa-history text-primary mb-2" style="font-size: 2rem;"></i>
+                    <h5 class="font-bold mb-1">Order History</h5>
+                    <small class="text-muted">View past receipts & status</small>
+                </a>
+            </div>
+
+            <!-- Recommended Food Section -->
+            <div class="d-flex justify-between align-center mb-3">
+                <h3 class="font-bold">Recommended For You</h3>
+                <a href="menu.html" class="btn btn-outline btn-sm">See All Menu</a>
+            </div>
+            <div id="recommended-food-grid" class="food-grid"></div>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2026 CampusBite Canteen Management System.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript Files -->
+    <script src="js/data.js"></script>
+    <script src="js/utils.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/cart.js"></script>
+    <script src="js/menu.js"></script>
+    <script src="js/orders.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
